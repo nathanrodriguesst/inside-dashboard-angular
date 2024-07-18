@@ -1,0 +1,50 @@
+.jumbotron {
+  background-color: #343a40;
+  border-radius: 10px;
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-normal-header {
+  background-color: #3642B0;
+}
+
+.card-normal-body {
+  background-color: #3642b052;
+}
+
+.card-green-header {
+  background-color: #267217;
+}
+
+.card-green-body {
+  background-color: #2672175e;
+}
+
+.card-yellow-header {
+  background-color: #ecb709;
+}
+
+.card-yellow-body {
+  background-color: #ecb709a1;
+}
+
+.card-red-header {
+  background-color: #d42f23;
+}
+
+.card-red-body {
+  background-color: #ffffff3d;
+}
+
+.list-group-item {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.alert {
+  border-radius: 5px;
+}

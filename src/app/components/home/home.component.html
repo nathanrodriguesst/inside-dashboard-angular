@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center mt-4">
+    <h1>Welcome to Inside Dashboard</h1>
+    <p class="lead">Monitor your network and get insights</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card text-white mb-3 ">
+        <div class="card-header card-normal-header">Total Scans</div>
+        <div class="card-body card-normal-body">
+          <h5 class="card-title">125</h5>
+          <p class="card-text">Nmap Scans</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white mb-3">
+        <div class="card-header card-green-header">Active Alerts</div>
+        <div class="card-body card-green-body ">
+          <h5 class="card-title">8</h5>
+          <p class="card-text">Security Alerts</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white mb-3">
+        <div class="card-header card-yellow-header">Pending Reports</div>
+        <div class="card-body card-yellow-body">
+          <h5 class="card-title">5</h5>
+          <p class="card-text">Pending Reports</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white bg-danger mb-3">
+        <div class="card-header card-red-header">Issues</div>
+        <div class="card-body card-red-body">
+          <h5 class="card-title">3</h5>
+          <p class="card-text">Critical Issues</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Recent Scans</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Nmap scan on 192.168.1.1 (Success)</li>
+        <li class="list-group-item">Feroxbuster on example.com (Found 3 directories)</li>
+        <li class="list-group-item">Nmap scan on 10.0.0.5 (Failed)</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      
+      <ul class="list-group">
+        <h3>Last Found Vulnerabilities</h3>
+        <li class="list-group-item">Port 22 open on 192.168.1.1 (Critical)</li>
+        <li class="list-group-item">SQL Injection on example.com (Critical)</li>
+        <li class="list-group-item">Upatched PHP version on 10.0.0.5 (Moderate)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h3>Notifications</h3>
+      <div class="alert alert-info" role="alert">
+        New update available for the Nmap module.
+      </div>
+      <div class="alert alert-warning" role="alert">
+        High CPU usage detected on server 192.168.1.2.
+      </div>
+      <div class="alert alert-danger" role="alert">
+        Unauthorized access attempt detected on server 10.0.0.5.
+      </div>
+    </div>
+  </div>
+</div>

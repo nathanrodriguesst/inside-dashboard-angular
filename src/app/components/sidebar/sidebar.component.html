@@ -1,0 +1,57 @@
+<nav class="sidebar bg-light">
+  <img src="/assets/logo.png" alt="Logo" class="logo">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']"> <i class="fa-solid fa-house"></i> Home</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#pentestingCollapse" role="button" aria-expanded="false" aria-controls="pentestingCollapse">
+        <i class="fa-solid fa-shield"></i> Pentesting
+      </a>
+      <div class="collapse" id="pentestingCollapse">
+        <li class="nav-item ms-3">
+          <a class="nav-link" routerLink="/web-app-pentesting">Web App</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" [routerLink]="['pentesting']">Network</a>
+        </li>                 
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#categoriasCollapse" role="button" aria-expanded="false" aria-controls="categoriasCollapse">
+        <i class="fa-solid fa-network-wired"></i> Scans
+      </a>
+      <div class="collapse" id="categoriasCollapse">
+        <li class="nav-item ms-3">
+          <a class="nav-link" [routerLink]="['nmap']">Nmap</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" routerLink="/category-list">Feroxbuster</a>
+        </li>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#clientesCollapse" role="button" aria-expanded="false" aria-controls="clientesCollapse">
+        <i class="fa-solid fa-chart-simple"></i> Reports
+      </a>
+      <div class="collapse" id="clientesCollapse">
+        <li class="nav-item ms-3">
+          <a class="nav-link" routerLink="">Networking</a>
+        </li>
+      </div>
+    </li>
+  </ul>
+  
+  <ul class="nav flex-column bottom-fixed">
+    <hr class="text-light">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/login"><i class="fa-solid fa-gear"></i> Preferências</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn-danger" routerLink="/logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+    </li>
+  </ul>
+</nav>
