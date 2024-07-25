@@ -15,7 +15,6 @@ import { ToastrService } from 'ngx-toastr';
 export class NmapComponent implements OnInit {
   nmapForm: FormGroup;
   isLoading = false;
-  responseMessage = '';
   result: Nmap | null = null;
 
   constructor(
@@ -43,14 +42,9 @@ export class NmapComponent implements OnInit {
     this.nmapForm.patchValue({ checkedValues });
   }
 
-  fetchResults() {
-    
-  }
-
   onSubmit(): void {
     if (this.nmapForm.valid) {
       this.isLoading = true;
-      this.responseMessage = '';
 
       var ip = this.nmapForm.get('ip')?.value;
       var args = this.nmapForm.get('checkedValues')?.value;
