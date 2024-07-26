@@ -70,30 +70,39 @@
     </div>
   </div>
   
-  <div class="container-fluid col-lg-12 mt-5">
-    <h2 class="rg-font">Enter your IP address:</h2>
-    <form [formGroup]="nmapForm" (ngSubmit)="onSubmit()">
-      <div class="row col-lg-12">
-        <div class="form-group mb-3 col-lg-10">
-          <label for="ip" class="form-label"></label>
-          <input type="text" class="form-control rounded-pill shadow fontAwesome search" id="ip" formControlName="ip" placeholder="Type the target IP Address here">
-          <input type="hidden" id="checkedValues" formControlName="checkedValues">
+  <div class="container-fluid">
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="col-lg-9"> 
+          <h2>Nmap Scan</h2>
+          <p>
+            This mode will run a simple Nmap scan in the target bellow.
+          </p>
         </div>
-        <div class="col-lg-2 mt-4">
-          <button type="button" class="btn rounded-pill shadow btn-blue ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="This scan can take a while depending on your flags.">
-            <i class="fa-solid fa-circle-info"></i>
-          </button>
-          <button type="button" id="filter-button" class="btn rounded-pill shadow btn-blue ms-2" data-bs-toggle="modal" data-bs-target="#filter-modal">
-            <i class="fa-solid fa-filter"></i>
-          </button>
-          <button type="submit" class="btn rounded-pill shadow btn-blue ms-2" id="execute" name="execute">
-            <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            <span *ngIf="!isLoading">Execute</span>
-          </button>
-        </div>
+        
+        <form [formGroup]="nmapForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-lg-10">
+              <input type="text" class="form-control" id="ip" formControlName="ip" placeholder="Type the target IP Address here">
+              <input type="hidden" id="checkedValues" formControlName="checkedValues">
+            </div>
+            <div class="col-lg-2">
+              <button type="button" class="btn rounded-pill shadow btn-blue ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="This scan can take a while depending on your flags.">
+                <i class="fa-solid fa-circle-info"></i>
+              </button>
+              <button type="button" id="filter-button" class="btn rounded-pill shadow btn-blue ms-2" data-bs-toggle="modal" data-bs-target="#filter-modal">
+                <i class="fa-solid fa-filter"></i>
+              </button>
+              <button type="submit" class="btn rounded-pill shadow btn-blue ms-2" id="execute" name="execute">
+                <i *ngIf="!isLoading" class="fa-solid fa-play"></i>
+                <i *ngIf="isLoading" class="spinner-border" role="status" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-
+    </div>
+    
     <div *ngIf="result" class="mt-3">
         <h3 class="rg-font">Scan Output:</h3>
         <div class="mt-3">

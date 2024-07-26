@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="jumbotron text-center mt-4">
-    <h1>Welcome to Inside Dashboard</h1>
+    <h1>Inside Dashboard</h1>
     <p class="lead">Monitor your network and get insights</p>
   </div>
 
@@ -9,17 +9,17 @@
       <div class="card text-white mb-3 ">
         <div class="card-header card-normal-header">Total Scans</div>
         <div class="card-body card-normal-body">
-          <h5 class="card-title">125</h5>
-          <p class="card-text">Nmap Scans</p>
+          <h5 class="card-title">13</h5>
+          <p class="card-text">Network Scans</p>
         </div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="card text-white mb-3">
-        <div class="card-header card-green-header">Active Alerts</div>
+        <div class="card-header card-green-header">Alerts</div>
         <div class="card-body card-green-body ">
-          <h5 class="card-title">8</h5>
-          <p class="card-text">Security Alerts</p>
+          <h5 class="card-title">7</h5>
+          <p class="card-text">Vulnerabilities found</p>
         </div>
       </div>
     </div>
@@ -45,19 +45,19 @@
 
   <div class="row">
     <div class="col-md-6">
-      <h3>Recent Scans</h3>
+      <h3>Recent Activities</h3>
       <ul class="list-group">
-        <li class="list-group-item">Nmap scan on 192.168.1.1 (Success)</li>
-        <li class="list-group-item">Feroxbuster on example.com (Found 3 directories)</li>
-        <li class="list-group-item">Nmap scan on 10.0.0.5 (Failed)</li>
+        <li class="list-group-item">Attack simunation on 192.168.1.10 (Success)</li>
+        <li class="list-group-item">Attack simulation on 192.168.1.15 (Failed)</li>
+        <li class="list-group-item">Nmap scan on 10.0.0.5 (Success)</li>
       </ul>
     </div>
     <div class="col-md-6">
       
       <ul class="list-group">
         <h3>Last Found Vulnerabilities</h3>
-        <li class="list-group-item">Port 22 open on 192.168.1.1 (Critical)</li>
-        <li class="list-group-item">SQL Injection on example.com (Critical)</li>
+        <li class="list-group-item">FTP vulnerable version on 192.168.1.10, port 21 (Critical)</li>
+        <li class="list-group-item">Default samba password on 192.168.1.10, port 445 (Critical)</li>
         <li class="list-group-item">Upatched PHP version on 10.0.0.5 (Moderate)</li>
       </ul>
     </div>
@@ -67,13 +67,13 @@
     <div class="col-md-12">
       <h3>Notifications</h3>
       <div class="alert alert-info" role="alert">
-        New update available for the Nmap module.
+        [NEW] New update available, run "inside-update" in your terminal.
       </div>
       <div class="alert alert-warning" role="alert">
-        High CPU usage detected on server 192.168.1.2.
+        [SUGGESTION] Enable autoscan module for increased protection.
       </div>
       <div class="alert alert-danger" role="alert">
-        Unauthorized access attempt detected on server 10.0.0.5.
+        [PROBLEM] Missing dependencies: Metasploit; Run inside-update to fix the issue.
       </div>
     </div>
   </div>
