@@ -37,7 +37,7 @@
 }
 
 .card-red-body {
-  background-color: #ffffff3d;
+  background-color: #ff00006b;
 }
 
 .list-group-item {
@@ -47,4 +47,9 @@
 
 .alert {
   border-radius: 5px;
+}
+
+a {
+  color: black;
+  text-decoration: none; /* no underline */
 }
