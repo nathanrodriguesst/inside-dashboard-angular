@@ -1,12 +1,10 @@
 <div class="container-fluid">
-
-
   <div class="row">
     <div class="col-md-4">
-      <div class="card text-white mb-3 ">
+      <div class="card text-white mb-3">
         <div class="card-header card-green-header fw-bold">Total Pentesting</div>
         <div class="card-body card-green-body">
-          <h5 class="card-title fw-bold">13</h5>
+          <h5 class="card-title fw-bold">{{ result.response.exploitCount }}</h5>
           <p class="card-text">Penetration Tests Ran</p>
         </div>
       </div>
@@ -16,7 +14,7 @@
       <div class="card text-white mb-3">
         <div class="card-header card-yellow-header fw-bold">Total Nmap Scans</div>
         <div class="card-body card-yellow-body">
-          <h5 class="card-title fw-bold">5</h5>
+          <h5 class="card-title fw-bold">{{ result.response.scanCount }}</h5>
           <p class="card-text">Nmap Scans Ran</p>
         </div>
       </div>
@@ -26,7 +24,7 @@
       <div class="card text-white mb-3">
         <div class="card-header card-red-header fw-bold">Alerts</div>
         <div class="card-body card-red-body">
-          <h5 class="card-title fw-bold">7</h5>
+          <h5 class="card-title fw-bold">{{ result.response.vulnerabilitiesCount }}</h5>
           <p class="card-text">Vulnerabilities found</p>
         </div>
       </div>
@@ -37,32 +35,31 @@
     <div class="col-md-6">
       <h3>Recent Activities</h3>
       <ul class="list-group">
-        <li class="list-group-item">[02/08/2024] Attack simulation on 192.168.1.10 (Success)</li>
-        <li class="list-group-item">[02/08/2024] Attack simulation on 192.168.1.15 (Failed)</li>
-        <li class="list-group-item">[02/08/2024] Nmap scan on 10.0.0.5 (Success)</li>
+        <li *ngFor="let activity of result.response.recentActivities | slice:0:3 " class="list-group-item">
+          [{{ activity.activityDate }}] {{ activity.activityType }} on {{ activity.activityTarget }} ({{ activity.exploited ? 'Success' : 'Fail'}})
+        </li>
       </ul>
     </div>
     <div class="col-md-6">
-      
       <ul class="list-group">
         <h3>Last Vulnerabilities Found</h3>
-        <li class="list-group-item">[02/08/2024] FTP vulnerable version on 192.168.1.10, port 21</li>
-        <li class="list-group-item">[03/08/2024] MySQL vulnerable version on 192.168.1.10, port 3306</li>
-        <li class="list-group-item">[04/08/2024] SSH vulnerable version on 192.168.1.10, port 22</li>
+        <li *ngFor="let service of result.response.vulnerableServicesRegisters | slice:0:5 " class="list-group-item">
+          [{{ service.date }}] {{ service.service }} vulnerable version on {{ service.ip }}, port {{ service.port }}
+        </li>
       </ul>
     </div>
   </div>
 
-  <div class="row mt-4">
+  <div class="row mt-2">
     <div class="col-md-12">
       <h3>Notifications</h3>
       <div class="alert alert-info" role="alert">
-        <a [routerLink]="['pentesting']"> New module Network Analysis arrived, click here and try it now. </a>
+        <a [routerLink]="['/pentesting']"> New module Network Analysis arrived, click here and try it now. </a>
       </div>
     </div>
     <div class="col-md-12">
       <div class="alert alert-info" role="alert">
-        <a [routerLink]="['nmap']"> Scan your network now and find useful insights about your running services. </a>
+        <a [routerLink]="['/nmap']"> Scan your network now and find useful insights about your running services. </a>
       </div>
     </div>
   </div>

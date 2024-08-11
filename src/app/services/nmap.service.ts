@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Nmap } from '../models/nmap.model';
 import { environment } from '../environment/environment';
 
