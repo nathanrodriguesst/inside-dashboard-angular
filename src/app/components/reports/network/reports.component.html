@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="col-lg-9"> 
+        <h2>Network Report</h2>
+      </div>
+      <form [formGroup]="reportsForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3 mt-3">
+          <div class="col-md-6">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="startDate" formControlName="startDate">
+          </div>
+          <div class="col-md-6">
+            <label for="endDate" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="endDate" formControlName="endDate">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="activityType" class="form-label">Type</label>
+          <select class="form-select" id="activityType" formControlName="activityType">
+            <option value="Exploit">Network</option>
+            <option value="Scan">Scan</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-blue">Generate</button>
+      </form>
+    </div>
+  </div>
+
+   <div *ngIf="results && results.length > 0" class="mt-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Target</th>
+          <th>Type</th>
+          <th>Successful</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.id }}</td>
+          <td>{{ result.activityDate }}</td>
+          <td>{{ result.activityTarget }}</td>
+          <td>{{ result.activityType }}</td>
+          <td>{{ result.exploited ? 'Yes' : 'No' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>

@@ -28,6 +28,13 @@ export class HomeComponent implements OnInit {
     this.home.prepareHome().subscribe({
       next: (data: Home) => {
         this.result = data;
+        // Reverse the order of the last 5 activities
+        this.result.response.recentActivities = this.result.response.recentActivities
+          .slice(-3)        // Take the last 5 items
+          .reverse();       // Reverse their order
+        this.result.response.vulnerableServicesRegisters = this.result.response.vulnerableServicesRegisters
+        .slice(-3)        // Take the last 5 items
+        .reverse();       // Reverse their order
       },
       error: () => {
         console.error("Something went wrong.");

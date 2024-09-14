@@ -17,10 +17,10 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#categoriasCollapse" role="button" aria-expanded="false" aria-controls="categoriasCollapse">
+      <a class="nav-link" data-bs-toggle="collapse" href="#scansCollapse" role="button" aria-expanded="false" aria-controls="scansCollapse">
         <i class="fa-solid fa-network-wired"></i> Scans
       </a>
-      <div class="collapse" id="categoriasCollapse">
+      <div class="collapse" id="scansCollapse">
         <li class="nav-item ms-3">
           <a class="nav-link" [routerLink]="['nmap']">Nmap</a>
         </li>
@@ -28,12 +28,15 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#clientesCollapse" role="button" aria-expanded="false" aria-controls="clientesCollapse">
+      <a class="nav-link" data-bs-toggle="collapse" href="#reportsCollapse" role="button" aria-expanded="false" aria-controls="reportsCollapse">
         <i class="fa-solid fa-chart-simple"></i> Reports
       </a>
-      <div class="collapse" id="clientesCollapse">
+      <div class="collapse" id="reportsCollapse">
         <li class="nav-item ms-3">
-          <a class="nav-link" routerLink="">Networking</a>
+          <a class="nav-link" routerLink="reports">Networking</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" routerLink="vulnerability-report">Vulnerabilities</a>
         </li>
       </div>
     </li>
