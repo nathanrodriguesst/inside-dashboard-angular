@@ -45,7 +45,16 @@
   <ul class="nav flex-column bottom-fixed">
     <hr class="text-light">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/login"><i class="fa-solid fa-gear"></i> Settings</a>
+      <a class="nav-link" data-bs-toggle="collapse" href="#configCollapse" role="button" aria-expanded="false" aria-controls="configCollapse">
+        <i class="fa-solid fa-gear"></i> Settings
+      </a>
+      <div class="collapse" id="configCollapse">
+        <li class="nav-item ms-3">
+          <a class="nav-link" (click)="toggleTheme()" href=""><i class="fa-solid" [ngClass]="{'fa-sun': isDarkMode, 'fa-moon': !isDarkMode}"></i>
+            {{ isDarkMode ? ' Light Mode' : ' Dark Mode'}}
+          </a>
+        </li>
+      </div>
     </li>
   </ul>
 </nav>

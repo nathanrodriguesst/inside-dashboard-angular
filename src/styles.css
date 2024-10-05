@@ -1,4 +1,45 @@
 .btn-blue {
   background-color: #3642B0 !important; 
   color: white !important;
-} 
+}
+
+.content {
+  border-radius: 0 !important; /* Remove os cantos arredondados da div content */
+}
+
+/* Light Mode (padrão) */
+body {
+  --background-color: white;
+  --text-color: black;
+  --content-background-color: #f5f5f5; /* cor de fundo da div.content para o Light Mode */
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --card-background-color: #121212;
+  --content-text-color: #e0e0e0;
+  --content-background-color: #333; /* cor de fundo da div.content para o Dark Mode */
+}
+
+/* Aplicando as variáveis CSS no body e div.content */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+div.content {
+  background-color: var(--content-background-color);
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--content-text-color);
+}
+
+div.card-dark {
+  background-color: var(--card-background-color);
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
